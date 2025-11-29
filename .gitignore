@@ -1,4 +1,39 @@
+# Configuration
 config.php
+
+# User uploads
 oc-content/uploads/HTML/
+
+# Server configuration
 robots.txt
+
+# Temporary files
 tmp/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# IDE and editor files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+
+# Debug and log files
+oc-content/debug.log
+oc-content/queries.log
+oc-content/explain_queries.log
+*.log
+
+# Dependency directories (if using Composer directly)
+/vendor/
+
+# Cache files
+oc-content/uploads/minify/*
+!oc-content/uploads/minify/index.php
