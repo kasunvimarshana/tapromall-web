@@ -29,8 +29,9 @@ if (!function_exists('starter_child_enqueue_styles')) {
      * @return void
      */
     function starter_child_enqueue_styles() {
-        // Only load if custom CSS is enabled
-        if (osc_get_preference('custom_css_enabled', 'starter_child_theme') != '0') {
+        // Only load if custom CSS is enabled (default to enabled)
+        $css_enabled = osc_get_preference('custom_css_enabled', 'starter_child_theme');
+        if ($css_enabled === null || $css_enabled === '' || $css_enabled === '1') {
             // Register and enqueue child theme main stylesheet
             $css_file = STARTER_CHILD_PATH . 'css/child-style.css';
             if (file_exists($css_file)) {
@@ -67,8 +68,9 @@ if (!function_exists('starter_child_enqueue_scripts')) {
      * @return void
      */
     function starter_child_enqueue_scripts() {
-        // Only load if custom JS is enabled
-        if (osc_get_preference('custom_js_enabled', 'starter_child_theme') != '0') {
+        // Only load if custom JS is enabled (default to enabled)
+        $js_enabled = osc_get_preference('custom_js_enabled', 'starter_child_theme');
+        if ($js_enabled === null || $js_enabled === '' || $js_enabled === '1') {
             // Register and enqueue child theme main script
             $js_file = STARTER_CHILD_PATH . 'js/child-scripts.js';
             if (file_exists($js_file)) {

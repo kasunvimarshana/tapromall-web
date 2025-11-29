@@ -45,6 +45,16 @@ if (Params::getParam('starter_child_settings') === 'done') {
 $custom_css_enabled = osc_get_preference('custom_css_enabled', 'starter_child_theme');
 $custom_js_enabled = osc_get_preference('custom_js_enabled', 'starter_child_theme');
 $debug_mode = osc_get_preference('debug_mode', 'starter_child_theme');
+
+/**
+ * Helper function to output checked attribute for checkboxes
+ *
+ * @param string $value The preference value
+ * @return string The checked attribute or empty string
+ */
+function starter_child_checked($value) {
+    return ($value === '1') ? 'checked="checked"' : '';
+}
 ?>
 
 <!DOCTYPE html>
@@ -165,7 +175,7 @@ $debug_mode = osc_get_preference('debug_mode', 'starter_child_theme');
                 
                 <div class="child-form-row">
                     <label>
-                        <input type="checkbox" name="custom_css_enabled" value="1" <?php echo ($custom_css_enabled == '1') ? 'checked="checked"' : ''; ?> />
+                        <input type="checkbox" name="custom_css_enabled" value="1" <?php echo starter_child_checked($custom_css_enabled); ?> />
                         <div class="label-content">
                             <strong><?php _e('Enable Custom CSS', 'starter-child'); ?></strong>
                             <span><?php _e('Load the child theme stylesheet (child-style.css). Disable to use only parent theme styles.', 'starter-child'); ?></span>
@@ -175,7 +185,7 @@ $debug_mode = osc_get_preference('debug_mode', 'starter_child_theme');
                 
                 <div class="child-form-row">
                     <label>
-                        <input type="checkbox" name="custom_js_enabled" value="1" <?php echo ($custom_js_enabled == '1') ? 'checked="checked"' : ''; ?> />
+                        <input type="checkbox" name="custom_js_enabled" value="1" <?php echo starter_child_checked($custom_js_enabled); ?> />
                         <div class="label-content">
                             <strong><?php _e('Enable Custom JavaScript', 'starter-child'); ?></strong>
                             <span><?php _e('Load the child theme JavaScript (child-scripts.js). Disable to use only parent theme scripts.', 'starter-child'); ?></span>
@@ -192,7 +202,7 @@ $debug_mode = osc_get_preference('debug_mode', 'starter_child_theme');
                 
                 <div class="child-form-row">
                     <label>
-                        <input type="checkbox" name="debug_mode" value="1" <?php echo ($debug_mode == '1') ? 'checked="checked"' : ''; ?> />
+                        <input type="checkbox" name="debug_mode" value="1" <?php echo starter_child_checked($debug_mode); ?> />
                         <div class="label-content">
                             <strong><?php _e('Debug Mode', 'starter-child'); ?></strong>
                             <span><?php _e('Enable debug logging in the browser console. For development use only.', 'starter-child'); ?></span>

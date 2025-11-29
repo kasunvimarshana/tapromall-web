@@ -57,13 +57,19 @@ if (!function_exists('starter_child_get_template')) {
      * Falls back to parent theme if not found.
      *
      * @param string $template Template file name (without .php).
-     * @param array  $args     Variables to pass to the template.
+     * @param array  $args     Variables to pass to the template (sanitized keys only).
      * @return void
      */
     function starter_child_get_template($template, $args = array()) {
-        // Extract variables for template use
-        if (!empty($args)) {
-            extract($args);
+        // Make variables available to template using explicit assignment
+        // instead of extract() to prevent variable pollution
+        if (!empty($args) && is_array($args)) {
+            foreach ($args as $key => $value) {
+                // Only allow alphanumeric keys to prevent injection
+                if (preg_match('/^[a-zA-Z_][a-zA-Z0-9_]*$/', $key)) {
+                    $$key = $value;
+                }
+            }
         }
 
         // First check child theme templates folder

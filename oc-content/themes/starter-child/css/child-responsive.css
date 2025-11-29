@@ -189,7 +189,7 @@
 /*
 @media screen and (max-width: 767px) {
     .is767 {
-        // Custom mobile styles
+        /* Custom mobile styles */
     }
 }
 */
@@ -198,7 +198,7 @@
 /*
 @media screen and (min-width: 768px) {
     .not767 {
-        // Custom tablet/desktop styles
+        /* Custom tablet/desktop styles */
     }
 }
 */

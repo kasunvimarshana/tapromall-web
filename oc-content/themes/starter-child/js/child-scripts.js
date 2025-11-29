@@ -203,10 +203,20 @@
 
             /**
              * Lazy load images with native loading
+             * Excludes above-the-fold images (hero, logo, critical images)
              */
             lazyLoadImages: function() {
                 // Add native lazy loading to images without it
-                $('img:not([loading])').each(function() {
+                // Exclude hero images, logos, and images in the header/first section
+                var excludeSelectors = [
+                    '#header-bar img',
+                    '.logo img',
+                    '.hero img',
+                    '[data-no-lazy]',
+                    '.above-fold img'
+                ].join(', ');
+
+                $('img:not([loading])').not(excludeSelectors).each(function() {
                     $(this).attr('loading', 'lazy');
                 });
             },
