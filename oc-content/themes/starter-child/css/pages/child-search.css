@@ -1,0 +1,17 @@
+/**
+ * Starter Child Theme - Search Page Specific Styles
+ *
+ * These styles only load on search result pages.
+ *
+ * @package StarterChild
+ * @version 1.0.0
+ */
+
+/* Search page specific customizations go here */
+
+/* Example: Customize search results layout */
+/*
+.search-results .item {
+    border-bottom: 1px solid var(--child-border-color);
+}
+*/

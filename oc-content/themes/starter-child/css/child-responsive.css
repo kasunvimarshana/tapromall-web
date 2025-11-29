@@ -1,0 +1,204 @@
+/**
+ * Starter Child Theme - Responsive Styles
+ *
+ * Mobile-first responsive styles for the child theme.
+ * These styles supplement the parent theme's responsive.css.
+ *
+ * Breakpoints:
+ * - Mobile: < 480px
+ * - Tablet: 481px - 768px
+ * - Desktop: 769px - 1024px
+ * - Large: > 1024px
+ *
+ * @package StarterChild
+ * @version 1.0.0
+ */
+
+/* ==========================================================================
+   Mobile First Base Styles (< 480px)
+   ========================================================================== */
+
+/* Widget areas stack vertically on mobile */
+.widget-area {
+    width: 100%;
+    padding: var(--child-spacing-md);
+}
+
+/* Full-width cards on mobile */
+.child-card {
+    margin-left: calc(var(--child-spacing-md) * -1);
+    margin-right: calc(var(--child-spacing-md) * -1);
+    border-radius: 0;
+}
+
+/* Announcement bar adjustments */
+.child-announcement-bar {
+    font-size: 0.75rem;
+    padding: var(--child-spacing-xs) var(--child-spacing-sm);
+}
+
+/* ==========================================================================
+   Small Tablets and Large Phones (480px - 767px)
+   ========================================================================== */
+
+@media screen and (min-width: 480px) {
+    .child-card {
+        margin-left: 0;
+        margin-right: 0;
+        border-radius: var(--child-radius-lg);
+    }
+    
+    .child-announcement-bar {
+        font-size: 0.875rem;
+    }
+}
+
+/* ==========================================================================
+   Tablets (768px - 1023px)
+   ========================================================================== */
+
+@media screen and (min-width: 768px) {
+    .widget-area {
+        padding: var(--child-spacing-lg);
+    }
+    
+    /* Two-column widget layout on tablets */
+    .widget-area-sidebar {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--child-spacing-md);
+    }
+    
+    .widget-area-sidebar .widget {
+        margin-bottom: 0;
+    }
+}
+
+/* ==========================================================================
+   Desktop (1024px and up)
+   ========================================================================== */
+
+@media screen and (min-width: 1024px) {
+    /* Restore single column for sidebar on desktop */
+    .widget-area-sidebar {
+        display: block;
+    }
+    
+    .widget-area-sidebar .widget {
+        margin-bottom: var(--child-spacing-md);
+    }
+}
+
+/* ==========================================================================
+   Large Screens (1280px and up)
+   ========================================================================== */
+
+@media screen and (min-width: 1280px) {
+    /* Wider container on large screens */
+    .container,
+    .inside {
+        max-width: 1280px;
+    }
+}
+
+/* ==========================================================================
+   Extra Large Screens (1536px and up)
+   ========================================================================== */
+
+@media screen and (min-width: 1536px) {
+    /* Even wider container on extra large screens */
+    .container,
+    .inside {
+        max-width: 1440px;
+    }
+}
+
+/* ==========================================================================
+   Touch Device Specific
+   ========================================================================== */
+
+@media (hover: none) {
+    /* Increase tap target sizes on touch devices */
+    .btn,
+    button,
+    a.btn {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    /* Remove hover effects that don't work on touch */
+    .child-card:hover {
+        box-shadow: var(--child-shadow-sm);
+    }
+}
+
+/* ==========================================================================
+   High DPI / Retina Displays
+   ========================================================================== */
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    /* Use higher resolution images for retina displays */
+    /* Example:
+    .logo img {
+        image-rendering: -webkit-optimize-contrast;
+    }
+    */
+}
+
+/* ==========================================================================
+   Landscape Orientation
+   ========================================================================== */
+
+@media screen and (max-height: 450px) and (orientation: landscape) {
+    /* Reduce header height in landscape mode on small screens */
+    #header-bar {
+        padding-top: var(--child-spacing-xs);
+        padding-bottom: var(--child-spacing-xs);
+    }
+}
+
+/* ==========================================================================
+   Dark Mode Support (Optional)
+   ========================================================================== */
+
+@media (prefers-color-scheme: dark) {
+    /* 
+     * Uncomment below to enable automatic dark mode support.
+     * Note: This should match the parent theme's dark mode implementation.
+     */
+    /*
+    :root {
+        --child-text-color: #f1f5f9;
+        --child-text-muted: #94a3b8;
+        --child-border-color: #334155;
+        --child-background: #0f172a;
+        --child-background-alt: #1e293b;
+    }
+    
+    .widget {
+        background: var(--child-background-alt);
+    }
+    */
+}
+
+/* ==========================================================================
+   Parent Theme Responsive Overrides
+   ========================================================================== */
+
+/* Example: Override parent theme's .is767 class behavior */
+/*
+@media screen and (max-width: 767px) {
+    .is767 {
+        /* Custom mobile styles */
+    }
+}
+*/
+
+/* Example: Override parent theme's .not767 class behavior */
+/*
+@media screen and (min-width: 768px) {
+    .not767 {
+        /* Custom tablet/desktop styles */
+    }
+}
+*/

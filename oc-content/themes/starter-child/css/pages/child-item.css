@@ -1,0 +1,17 @@
+/**
+ * Starter Child Theme - Item Detail Page Specific Styles
+ *
+ * These styles only load on item/listing detail pages.
+ *
+ * @package StarterChild
+ * @version 1.0.0
+ */
+
+/* Item detail page specific customizations go here */
+
+/* Example: Customize item gallery */
+/*
+.item-detail .gallery {
+    margin-bottom: var(--child-spacing-lg);
+}
+*/

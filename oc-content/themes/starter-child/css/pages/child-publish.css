@@ -1,0 +1,17 @@
+/**
+ * Starter Child Theme - Publish/Edit Page Specific Styles
+ *
+ * These styles only load on item publish and edit pages.
+ *
+ * @package StarterChild
+ * @version 1.0.0
+ */
+
+/* Publish/Edit page specific customizations go here */
+
+/* Example: Customize form styling */
+/*
+.add_item .form-group {
+    margin-bottom: var(--child-spacing-md);
+}
+*/
