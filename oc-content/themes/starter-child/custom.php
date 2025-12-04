@@ -11,4 +11,6 @@
  */
 
 // Prevent direct file access
-defined('ABSPATH') || exit;
+if (!defined('ABS_PATH')) {
+    exit('Direct access is not allowed.');
+}

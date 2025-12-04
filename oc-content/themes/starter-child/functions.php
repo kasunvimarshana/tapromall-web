@@ -190,7 +190,7 @@ function starter_child_load_modules() {
 }
 
 // Initialize child theme
-add_action('init', 'starter_child_init');
+osc_add_hook('init', 'starter_child_init');
 
 // Load additional modules
 starter_child_load_modules();

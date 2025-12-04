@@ -83,7 +83,7 @@ function starter_child_version() {
  * @return bool True if debug mode is enabled
  */
 function starter_child_is_debug() {
-    return defined('WP_DEBUG') && WP_DEBUG;
+    return defined('OSC_DEBUG') && OSC_DEBUG;
 }
 
 /**
