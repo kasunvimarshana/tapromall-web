@@ -1,0 +1,141 @@
+# Starter Child Theme - Git Ignore File
+# 
+# This file specifies which files and directories should be ignored
+# by version control systems like Git.
+
+# ============================================================================
+# Compiled/Generated Files
+# ============================================================================
+
+# Compiled translation files (generate from .po files)
+*.mo
+
+# Compiled CSS (if using preprocessors like SASS/LESS)
+*.css.map
+*.sass.map
+*.scss.map
+
+# Compressed/minified files (if auto-generated)
+*.min.css
+*.min.js
+
+# ============================================================================
+# Temporary & Cache Files
+# ============================================================================
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# Editor/IDE files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.project
+.settings/
+*.tmproj
+*.tmproject
+nbproject/
+
+# ============================================================================
+# Development Files
+# ============================================================================
+
+# Node modules (if using npm for build tools)
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Composer (if using PHP dependencies)
+vendor/
+composer.lock
+
+# Build directories
+dist/
+build/
+.cache/
+
+# ============================================================================
+# Backup & Log Files
+# ============================================================================
+
+# Backup files
+*.bak
+*.backup
+*.old
+*.orig
+*.tmp
+
+# Log files
+*.log
+logs/
+error_log
+debug.log
+
+# ============================================================================
+# Security & Sensitive Data
+# ============================================================================
+
+# Configuration files with sensitive data
+config.local.php
+.env
+.env.local
+
+# Private keys
+*.pem
+*.key
+*.crt
+
+# ============================================================================
+# Testing & Documentation
+# ============================================================================
+
+# Testing coverage
+coverage/
+.phpunit.result.cache
+
+# Documentation build files
+docs/_build/
+site/
+
+# ============================================================================
+# Custom Exclusions
+# ============================================================================
+
+# User-uploaded files (if any test uploads exist)
+uploads/
+temp/
+
+# Custom development files
+scratch/
+notes/
+todo.txt
+NOTES.md
+
+# ============================================================================
+# Keep Important Files
+# ============================================================================
+
+# Ensure .gitkeep files are tracked
+!.gitkeep
+
+# Ensure important config files are tracked
+!.gitignore
+!README.md
+!CHANGELOG.md
+
+# ============================================================================
+# End of .gitignore
+# ============================================================================

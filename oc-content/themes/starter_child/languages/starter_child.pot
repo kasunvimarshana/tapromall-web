@@ -1,0 +1,170 @@
+# Starter Child Theme Translation Template
+# 
+# This is a POT (Portable Object Template) file for the Starter Child theme.
+# Translators can use this file to create translations for different languages.
+#
+# To create a translation:
+# 1. Copy this file and rename it to your language code (e.g., es_ES.po for Spanish)
+# 2. Use a tool like Poedit to translate the strings
+# 3. Generate the .mo file
+# 4. Place both .po and .mo files in the languages/ directory
+#
+# Text Domain: starter_child
+# Domain Path: /languages
+#
+
+msgid ""
+msgstr ""
+"Project-Id-Version: Starter Child Theme 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 00:00+0000\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+# Admin Settings Page
+msgid "Starter Child Settings"
+msgstr ""
+
+msgid "Theme Information"
+msgstr ""
+
+msgid "Theme Name:"
+msgstr ""
+
+msgid "Version:"
+msgstr ""
+
+msgid "Parent Theme:"
+msgstr ""
+
+msgid "Description:"
+msgstr ""
+
+msgid "Clean, blank child theme following Osclass best practices"
+msgstr ""
+
+msgid "Theme Configuration"
+msgstr ""
+
+msgid "General Settings"
+msgstr ""
+
+msgid "Enable Custom Styles"
+msgstr ""
+
+msgid "Load the child theme CSS file (style.css)"
+msgstr ""
+
+msgid "Enable Custom Scripts"
+msgstr ""
+
+msgid "Load the child theme JavaScript file (main.js)"
+msgstr ""
+
+msgid "Enable Debug Mode"
+msgstr ""
+
+msgid "Enable debugging output in browser console (development only)"
+msgstr ""
+
+msgid "Custom CSS"
+msgstr ""
+
+msgid "Additional CSS"
+msgstr ""
+
+msgid "Add custom CSS code that will be injected into the page head. This is useful for quick styling adjustments without editing theme files."
+msgstr ""
+
+msgid "Custom JavaScript"
+msgstr ""
+
+msgid "Additional JavaScript"
+msgstr ""
+
+msgid "Add custom JavaScript code that will be injected into the page footer. Do not include &lt;script&gt; tags."
+msgstr ""
+
+msgid "Save Settings"
+msgstr ""
+
+msgid "Settings saved successfully!"
+msgstr ""
+
+msgid "Documentation & Support"
+msgstr ""
+
+msgid "Getting Started"
+msgstr ""
+
+msgid "This child theme provides a clean foundation for customizing the Starter theme while maintaining update safety."
+msgstr ""
+
+msgid "File Structure"
+msgstr ""
+
+msgid "Theme functions and hooks"
+msgstr ""
+
+msgid "Custom styles"
+msgstr ""
+
+msgid "Custom JavaScript"
+msgstr ""
+
+msgid "Translation files"
+msgstr ""
+
+msgid "Best Practices"
+msgstr ""
+
+msgid "Use hooks instead of full file overrides whenever possible"
+msgstr ""
+
+msgid "Keep all custom code in the child theme, never modify parent theme files"
+msgstr ""
+
+msgid "Use proper escaping functions (osc_esc_html, osc_esc_js) for security"
+msgstr ""
+
+msgid "Follow Osclass naming conventions (snake_case with osc_ prefix)"
+msgstr ""
+
+msgid "Test thoroughly after parent theme updates"
+msgstr ""
+
+msgid "Resources"
+msgstr ""
+
+msgid "Osclass Developer Guide"
+msgstr ""
+
+msgid "Programming Standards"
+msgstr ""
+
+msgid "Child Theme Guidelines"
+msgstr ""
+
+msgid "Hooks Reference"
+msgstr ""
+
+# Warning Messages
+msgid "Warning:"
+msgstr ""
+
+msgid "The Starter parent theme is required for this child theme to work properly. Please install and activate the Starter theme first."
+msgstr ""
+
+msgid "Notice:"
+msgstr ""
+
+msgid "Theme has been updated. Please check the documentation for any changes."
+msgstr ""
+
+# End of translations

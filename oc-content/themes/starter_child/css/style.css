@@ -1,0 +1,403 @@
+/**
+ * Starter Child Theme Stylesheet
+ * 
+ * This stylesheet contains all custom styles for the Starter Child theme.
+ * All styles are scoped to avoid conflicts with the parent theme.
+ * 
+ * @package   StarterChild
+ * @author    TaproMall Team
+ * @version   1.0.0
+ * 
+ * Table of Contents:
+ * 1. CSS Variables & Theme Customization
+ * 2. Typography
+ * 3. Layout & Structure
+ * 4. Components
+ * 5. Utilities
+ * 6. Responsive Design
+ * 7. Accessibility
+ */
+
+/* ============================================================================
+   1. CSS VARIABLES & THEME CUSTOMIZATION
+   ============================================================================ */
+
+:root {
+    /* Primary Colors */
+    --starter-child-primary: #007bff;
+    --starter-child-primary-dark: #0056b3;
+    --starter-child-primary-light: #4da3ff;
+    
+    /* Secondary Colors */
+    --starter-child-secondary: #6c757d;
+    --starter-child-secondary-dark: #545b62;
+    --starter-child-secondary-light: #a8adb3;
+    
+    /* Accent Colors */
+    --starter-child-accent: #28a745;
+    --starter-child-warning: #ffc107;
+    --starter-child-danger: #dc3545;
+    --starter-child-info: #17a2b8;
+    
+    /* Neutral Colors */
+    --starter-child-white: #ffffff;
+    --starter-child-black: #000000;
+    --starter-child-gray-100: #f8f9fa;
+    --starter-child-gray-200: #e9ecef;
+    --starter-child-gray-300: #dee2e6;
+    --starter-child-gray-400: #ced4da;
+    --starter-child-gray-500: #adb5bd;
+    --starter-child-gray-600: #6c757d;
+    --starter-child-gray-700: #495057;
+    --starter-child-gray-800: #343a40;
+    --starter-child-gray-900: #212529;
+    
+    /* Typography */
+    --starter-child-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --starter-child-font-size-base: 16px;
+    --starter-child-line-height-base: 1.5;
+    --starter-child-font-weight-normal: 400;
+    --starter-child-font-weight-bold: 700;
+    
+    /* Spacing */
+    --starter-child-spacing-xs: 0.25rem;
+    --starter-child-spacing-sm: 0.5rem;
+    --starter-child-spacing-md: 1rem;
+    --starter-child-spacing-lg: 1.5rem;
+    --starter-child-spacing-xl: 2rem;
+    --starter-child-spacing-xxl: 3rem;
+    
+    /* Border Radius */
+    --starter-child-border-radius-sm: 0.2rem;
+    --starter-child-border-radius-md: 0.25rem;
+    --starter-child-border-radius-lg: 0.3rem;
+    
+    /* Shadows */
+    --starter-child-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    --starter-child-shadow-md: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    --starter-child-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+    
+    /* Transitions */
+    --starter-child-transition-base: all 0.3s ease;
+    --starter-child-transition-fast: all 0.15s ease;
+}
+
+/* ============================================================================
+   2. TYPOGRAPHY
+   ============================================================================ */
+
+/**
+ * Custom typography styles
+ * Scoped to .starter-child class to avoid conflicts
+ */
+.starter-child-typography {
+    font-family: var(--starter-child-font-family);
+    font-size: var(--starter-child-font-size-base);
+    line-height: var(--starter-child-line-height-base);
+    color: var(--starter-child-gray-900);
+}
+
+.starter-child-heading {
+    font-weight: var(--starter-child-font-weight-bold);
+    line-height: 1.2;
+    margin-bottom: var(--starter-child-spacing-md);
+}
+
+.starter-child-h1 { font-size: 2.5rem; }
+.starter-child-h2 { font-size: 2rem; }
+.starter-child-h3 { font-size: 1.75rem; }
+.starter-child-h4 { font-size: 1.5rem; }
+.starter-child-h5 { font-size: 1.25rem; }
+.starter-child-h6 { font-size: 1rem; }
+
+/* ============================================================================
+   3. LAYOUT & STRUCTURE
+   ============================================================================ */
+
+/**
+ * Container customizations
+ * Add custom layout styles here
+ */
+.starter-child-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--starter-child-spacing-md);
+}
+
+.starter-child-section {
+    padding: var(--starter-child-spacing-xl) 0;
+}
+
+.starter-child-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 calc(-1 * var(--starter-child-spacing-sm));
+}
+
+.starter-child-col {
+    flex: 1;
+    padding: 0 var(--starter-child-spacing-sm);
+}
+
+/* ============================================================================
+   4. COMPONENTS
+   ============================================================================ */
+
+/**
+ * Custom button styles
+ */
+.starter-child-btn {
+    display: inline-block;
+    padding: var(--starter-child-spacing-sm) var(--starter-child-spacing-lg);
+    font-weight: var(--starter-child-font-weight-normal);
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: var(--starter-child-border-radius-md);
+    transition: var(--starter-child-transition-base);
+    cursor: pointer;
+}
+
+.starter-child-btn-primary {
+    background-color: var(--starter-child-primary);
+    color: var(--starter-child-white);
+    border-color: var(--starter-child-primary);
+}
+
+.starter-child-btn-primary:hover {
+    background-color: var(--starter-child-primary-dark);
+    border-color: var(--starter-child-primary-dark);
+}
+
+/**
+ * Custom card styles
+ */
+.starter-child-card {
+    background-color: var(--starter-child-white);
+    border: 1px solid var(--starter-child-gray-300);
+    border-radius: var(--starter-child-border-radius-md);
+    box-shadow: var(--starter-child-shadow-sm);
+    padding: var(--starter-child-spacing-lg);
+    margin-bottom: var(--starter-child-spacing-md);
+}
+
+.starter-child-card-header {
+    margin-bottom: var(--starter-child-spacing-md);
+    padding-bottom: var(--starter-child-spacing-sm);
+    border-bottom: 1px solid var(--starter-child-gray-300);
+}
+
+.starter-child-card-body {
+    margin-bottom: var(--starter-child-spacing-md);
+}
+
+.starter-child-card-footer {
+    padding-top: var(--starter-child-spacing-sm);
+    border-top: 1px solid var(--starter-child-gray-300);
+}
+
+/**
+ * Custom alert styles
+ */
+.starter-child-alert {
+    padding: var(--starter-child-spacing-md);
+    margin-bottom: var(--starter-child-spacing-md);
+    border: 1px solid transparent;
+    border-radius: var(--starter-child-border-radius-md);
+}
+
+.starter-child-alert-info {
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+    color: #0c5460;
+}
+
+.starter-child-alert-success {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+}
+
+.starter-child-alert-warning {
+    background-color: #fff3cd;
+    border-color: #ffeaa7;
+    color: #856404;
+}
+
+.starter-child-alert-danger {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+}
+
+/* ============================================================================
+   5. UTILITIES
+   ============================================================================ */
+
+/**
+ * Spacing utilities
+ */
+.starter-child-mt-0 { margin-top: 0 !important; }
+.starter-child-mt-1 { margin-top: var(--starter-child-spacing-xs) !important; }
+.starter-child-mt-2 { margin-top: var(--starter-child-spacing-sm) !important; }
+.starter-child-mt-3 { margin-top: var(--starter-child-spacing-md) !important; }
+.starter-child-mt-4 { margin-top: var(--starter-child-spacing-lg) !important; }
+.starter-child-mt-5 { margin-top: var(--starter-child-spacing-xl) !important; }
+
+.starter-child-mb-0 { margin-bottom: 0 !important; }
+.starter-child-mb-1 { margin-bottom: var(--starter-child-spacing-xs) !important; }
+.starter-child-mb-2 { margin-bottom: var(--starter-child-spacing-sm) !important; }
+.starter-child-mb-3 { margin-bottom: var(--starter-child-spacing-md) !important; }
+.starter-child-mb-4 { margin-bottom: var(--starter-child-spacing-lg) !important; }
+.starter-child-mb-5 { margin-bottom: var(--starter-child-spacing-xl) !important; }
+
+.starter-child-p-0 { padding: 0 !important; }
+.starter-child-p-1 { padding: var(--starter-child-spacing-xs) !important; }
+.starter-child-p-2 { padding: var(--starter-child-spacing-sm) !important; }
+.starter-child-p-3 { padding: var(--starter-child-spacing-md) !important; }
+.starter-child-p-4 { padding: var(--starter-child-spacing-lg) !important; }
+.starter-child-p-5 { padding: var(--starter-child-spacing-xl) !important; }
+
+/**
+ * Display utilities
+ */
+.starter-child-d-none { display: none !important; }
+.starter-child-d-block { display: block !important; }
+.starter-child-d-inline { display: inline !important; }
+.starter-child-d-inline-block { display: inline-block !important; }
+.starter-child-d-flex { display: flex !important; }
+
+/**
+ * Text utilities
+ */
+.starter-child-text-left { text-align: left !important; }
+.starter-child-text-center { text-align: center !important; }
+.starter-child-text-right { text-align: right !important; }
+
+.starter-child-text-primary { color: var(--starter-child-primary) !important; }
+.starter-child-text-secondary { color: var(--starter-child-secondary) !important; }
+.starter-child-text-success { color: var(--starter-child-accent) !important; }
+.starter-child-text-danger { color: var(--starter-child-danger) !important; }
+.starter-child-text-warning { color: var(--starter-child-warning) !important; }
+.starter-child-text-info { color: var(--starter-child-info) !important; }
+
+.starter-child-text-muted { color: var(--starter-child-gray-600) !important; }
+
+/* ============================================================================
+   6. RESPONSIVE DESIGN
+   ============================================================================ */
+
+/**
+ * Mobile-first responsive breakpoints
+ */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    .starter-child-container {
+        max-width: 540px;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .starter-child-container {
+        max-width: 720px;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .starter-child-container {
+        max-width: 960px;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .starter-child-container {
+        max-width: 1140px;
+    }
+}
+
+/* Mobile-specific styles */
+@media (max-width: 767px) {
+    .starter-child-row {
+        flex-direction: column;
+    }
+    
+    .starter-child-col {
+        width: 100%;
+    }
+}
+
+/* ============================================================================
+   7. ACCESSIBILITY
+   ============================================================================ */
+
+/**
+ * Focus states for keyboard navigation
+ */
+.starter-child-btn:focus,
+a.starter-child-link:focus {
+    outline: 2px solid var(--starter-child-primary);
+    outline-offset: 2px;
+}
+
+/**
+ * Screen reader only content
+ */
+.starter-child-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/**
+ * Skip to content link
+ */
+.starter-child-skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--starter-child-primary);
+    color: var(--starter-child-white);
+    padding: var(--starter-child-spacing-sm) var(--starter-child-spacing-md);
+    text-decoration: none;
+    z-index: 100;
+}
+
+.starter-child-skip-link:focus {
+    top: 0;
+}
+
+/* ============================================================================
+   CUSTOM OVERRIDES
+   ============================================================================ */
+
+/**
+ * Add any custom overrides or specific modifications here
+ * Keep overrides minimal and well-documented
+ */
+
+/* Example: Customize listing cards */
+/*
+.starter-child .item-card {
+    border-radius: var(--starter-child-border-radius-lg);
+    transition: var(--starter-child-transition-base);
+}
+
+.starter-child .item-card:hover {
+    box-shadow: var(--starter-child-shadow-md);
+    transform: translateY(-2px);
+}
+*/
+
+/* ============================================================================
+   END OF STYLESHEET
+   ============================================================================ */
