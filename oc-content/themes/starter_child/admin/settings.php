@@ -54,8 +54,14 @@ $custom_js = starter_child_get_option('custom_js', '');
 $debug_mode = starter_child_get_option('debug_mode', '0');
 $theme_version = starter_child_get_option('theme_version', STARTER_CHILD_VERSION);
 
-// Include admin header
-osc_current_admin_theme_path('parts/header.php');
+// Include admin header - check if file exists first for compatibility
+$admin_header = osc_admin_base_path() . 'themes/' . osc_admin_current_theme() . '/parts/header.php';
+if (file_exists($admin_header)) {
+    osc_current_admin_theme_path('parts/header.php');
+} else {
+    // Fallback to basic header
+    echo '<div class="grid-system">';
+}
 ?>
 
 <div class="starter-child-admin">

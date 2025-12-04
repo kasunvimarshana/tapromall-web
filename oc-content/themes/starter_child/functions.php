@@ -39,11 +39,17 @@ define('STARTER_CHILD_VERSION', '1.0.0');
  * @return void
  */
 function starter_child_enqueue_styles() {
-    // Enqueue child theme main stylesheet
+    // Enqueue parent theme stylesheet first to ensure proper cascade
+    osc_enqueue_style(
+        'starter-parent-style',
+        osc_base_url() . 'oc-content/themes/starter/css/main.css'
+    );
+    
+    // Enqueue child theme main stylesheet after parent
     osc_enqueue_style(
         'starter-child-style',
         osc_current_web_theme_url('css/style.css'),
-        array(),
+        array('starter-parent-style'),
         STARTER_CHILD_VERSION
     );
 }

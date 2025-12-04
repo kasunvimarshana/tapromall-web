@@ -96,10 +96,12 @@
              * @return {void}
              */
             keyboardNavigation: function() {
-                // Add keyboard navigation enhancements here
-                $('a, button').on('keydown', function(e) {
-                    // Handle Enter and Space keys
+                // Add keyboard navigation enhancements for custom interactive elements
+                // Note: Native buttons and links already handle Enter/Space keys
+                $('[role="button"]:not(button):not(a)').on('keydown', function(e) {
+                    // Handle Enter and Space keys for non-native interactive elements
                     if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
                         $(this).trigger('click');
                     }
                 });
@@ -307,15 +309,30 @@
              * @return {void}
              */
             externalLinks: function() {
-                $('a[href^="http"]').not('[href*="' + window.location.hostname + '"]').each(function() {
-                    $(this).attr({
-                        'target': '_blank',
-                        'rel': 'noopener noreferrer'
-                    });
+                $('a[href^="http"]').each(function() {
+                    var link = $(this);
+                    var href = link.attr('href');
                     
-                    // Add screen reader text
-                    if (!$(this).find('.sr-only').length) {
-                        $(this).append('<span class="starter-child-sr-only"> (opens in new tab)</span>');
+                    try {
+                        // Use URL constructor for robust parsing
+                        var url = new URL(href);
+                        var currentHost = window.location.hostname;
+                        
+                        // Check if this is truly an external link
+                        if (url.hostname !== currentHost && !url.hostname.endsWith('.' + currentHost)) {
+                            link.attr({
+                                'target': '_blank',
+                                'rel': 'noopener noreferrer'
+                            });
+                            
+                            // Add screen reader text
+                            if (!link.find('.sr-only').length) {
+                                link.append('<span class="starter-child-sr-only"> (opens in new tab)</span>');
+                            }
+                        }
+                    } catch(e) {
+                        // Invalid URL, skip
+                        StarterChild.log('Invalid URL detected:', href);
                     }
                 });
             },

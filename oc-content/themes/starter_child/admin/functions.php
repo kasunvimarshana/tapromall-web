@@ -114,6 +114,7 @@ osc_add_hook('admin_page_header', 'starter_child_admin_notices', 10);
  * Add custom CSS to admin head
  * 
  * Injects custom CSS from settings into the admin head section.
+ * Note: CSS is sanitized to prevent malicious code injection.
  * 
  * @return void
  */
@@ -122,9 +123,15 @@ function starter_child_inject_custom_css() {
     $enable_custom_styles = starter_child_get_option('enable_custom_styles', '1');
     
     if ($enable_custom_styles === '1' && !empty($custom_css)) {
+        // Sanitize CSS to prevent XSS attacks
+        // Remove any <script> tags or javascript: protocols
+        $custom_css = preg_replace('/<script\b[^>]*>(.*?)<\/script>/is', '', $custom_css);
+        $custom_css = str_replace('javascript:', '', $custom_css);
+        $custom_css = str_replace('expression(', '', $custom_css); // IE specific
+        
         echo '<style type="text/css">' . "\n";
         echo '/* Starter Child Custom CSS */' . "\n";
-        echo $custom_css . "\n";
+        echo wp_strip_all_tags($custom_css, true) . "\n";
         echo '</style>' . "\n";
     }
 }
@@ -134,6 +141,8 @@ osc_add_hook('header', 'starter_child_inject_custom_css', 100);
  * Add custom JavaScript to footer
  * 
  * Injects custom JavaScript from settings into the page footer.
+ * IMPORTANT: This is a potential security risk. Consider limiting access
+ * to this feature to trusted administrators only.
  * 
  * @return void
  */
@@ -142,7 +151,18 @@ function starter_child_inject_custom_js() {
     $enable_custom_scripts = starter_child_get_option('enable_custom_scripts', '1');
     $debug_mode = starter_child_get_option('debug_mode', '0');
     
+    // Only allow for admin users to prevent XSS attacks
+    if (!osc_is_admin_user_logged_in()) {
+        return;
+    }
+    
     if ($enable_custom_scripts === '1' && !empty($custom_js)) {
+        // Sanitize JavaScript - remove any HTML tags
+        $custom_js = wp_strip_all_tags($custom_js);
+        
+        // Additional safety: Escape the JavaScript content
+        $custom_js = osc_esc_js($custom_js);
+        
         echo '<script type="text/javascript">' . "\n";
         echo '/* Starter Child Custom JavaScript */' . "\n";
         
@@ -150,7 +170,12 @@ function starter_child_inject_custom_js() {
             echo 'console.log("Starter Child: Loading custom JavaScript");' . "\n";
         }
         
+        // Output within a try-catch to prevent breaking the page
+        echo 'try {' . "\n";
         echo $custom_js . "\n";
+        echo '} catch(e) {' . "\n";
+        echo '    console.error("Starter Child: Error in custom JavaScript:", e);' . "\n";
+        echo '}' . "\n";
         echo '</script>' . "\n";
     }
 }
