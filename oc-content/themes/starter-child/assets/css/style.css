@@ -1,0 +1,127 @@
+/**
+ * Child Theme Main Stylesheet
+ * 
+ * This is the main stylesheet for the Starter Child Theme.
+ * All styles here are scoped to the child theme and will override parent styles.
+ * 
+ * @package     Starter_Child_Theme
+ * @version     1.0.0
+ * @author      TaproMall Development Team
+ * 
+ * Guidelines:
+ * - Follow BEM naming convention for new classes
+ * - Use specific selectors to ensure proper override
+ * - Keep styles organized by component
+ * - Add comments for complex style rules
+ * - Use CSS variables for theme consistency
+ */
+
+/* ==========================================================================
+   CSS Variables (Custom Properties)
+   ========================================================================== */
+
+:root {
+    /* Colors - Customize these for your brand */
+    --child-primary-color: #3498db;
+    --child-secondary-color: #2ecc71;
+    --child-accent-color: #e74c3c;
+    --child-text-color: #333333;
+    --child-background-color: #ffffff;
+    
+    /* Typography */
+    --child-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --child-heading-font: inherit;
+    
+    /* Spacing */
+    --child-spacing-xs: 0.25rem;
+    --child-spacing-sm: 0.5rem;
+    --child-spacing-md: 1rem;
+    --child-spacing-lg: 1.5rem;
+    --child-spacing-xl: 2rem;
+    
+    /* Border Radius */
+    --child-border-radius: 4px;
+    
+    /* Transitions */
+    --child-transition: all 0.3s ease;
+}
+
+/* ==========================================================================
+   Base Overrides
+   ========================================================================== */
+
+/* Add your base style overrides here */
+
+/* ==========================================================================
+   Layout Overrides
+   ========================================================================== */
+
+/* Header customizations */
+.child-header-custom {
+    /* Add custom header styles */
+}
+
+/* Footer customizations */
+.child-footer-custom {
+    /* Add custom footer styles */
+}
+
+/* ==========================================================================
+   Component Overrides
+   ========================================================================== */
+
+/* Button customizations */
+.child-button {
+    /* Add custom button styles */
+}
+
+/* Form customizations */
+.child-form {
+    /* Add custom form styles */
+}
+
+/* ==========================================================================
+   Responsive Overrides
+   ========================================================================== */
+
+/* Mobile devices */
+@media screen and (max-width: 767px) {
+    /* Mobile-specific overrides */
+}
+
+/* Tablets */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    /* Tablet-specific overrides */
+}
+
+/* Desktop */
+@media screen and (min-width: 1024px) {
+    /* Desktop-specific overrides */
+}
+
+/* ==========================================================================
+   Utility Classes
+   ========================================================================== */
+
+/* Add utility classes as needed */
+.child-hidden {
+    display: none !important;
+}
+
+.child-text-center {
+    text-align: center;
+}
+
+.child-clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* ==========================================================================
+   Print Styles
+   ========================================================================== */
+
+@media print {
+    /* Print-specific styles */
+}

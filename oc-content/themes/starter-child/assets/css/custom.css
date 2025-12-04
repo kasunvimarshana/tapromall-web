@@ -1,0 +1,30 @@
+/**
+ * Child Theme Custom Stylesheet
+ * 
+ * This file is for additional custom styles that are specific to your
+ * implementation and separate from the main theme overrides.
+ * 
+ * @package     Starter_Child_Theme
+ * @version     1.0.0
+ * @author      TaproMall Development Team
+ */
+
+/* ==========================================================================
+   Custom Additions
+   Place your custom CSS modifications here
+   ========================================================================== */
+
+/* Example: Custom homepage styles */
+/* .custom-homepage-banner {
+    background-color: var(--child-primary-color);
+    padding: var(--child-spacing-xl);
+} */
+
+/* Example: Custom listing styles */
+/* .custom-listing-card {
+    border: 1px solid #e0e0e0;
+    border-radius: var(--child-border-radius);
+    transition: var(--child-transition);
+} */
+
+/* Add your custom styles below this line */
